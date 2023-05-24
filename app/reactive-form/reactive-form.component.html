@@ -1,0 +1,27 @@
+<form [formGroup]="userForm">
+    <label>
+      Nom d'utilisateur:
+        <input type="text" formControlName="name">
+    </label>
+    <label>
+      Adresse:
+        <input type="text" formControlName="adress">
+    </label>
+  <div formGroupName="credential">
+    <label>
+      Email:
+        <input type="email" formControlName="email">
+    </label>
+    <label>
+      Mot de passe:
+        <input type="text" formControlName="password">
+    </label>
+  </div>
+<button (click)="onSubmit()">Inscription</button>
+  </form>
+<div *ngIf="newUser">
+    Nom d'utilisateur: {{newUser.name}}
+    Email: {{newUser.credential.email}}
+    Mot de passe: {{newUser.credential.password}}
+    Adress: {{newUser.adress}}
+</div>
